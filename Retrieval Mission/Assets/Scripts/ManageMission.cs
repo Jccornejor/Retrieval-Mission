@@ -1,19 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ManageMission : MonoBehaviour {
+public class ManageMission : MonoBehaviour
+{
 
-    public GameObject winCanvas ;
+    public GameObject winCanvas;
 
     void Awake()
     {
-        NotificationCenter.DefNotCenter.AddObserver(this,"OnWin");
+        NotificationCenter.DefNotCenter.AddObserver(this, "OnWin");
     }
     void OnWin()
     {
         winCanvas.SetActive(true);
     }
 
+    void OnLose()
+    {
+
+    }
 
 
 }
