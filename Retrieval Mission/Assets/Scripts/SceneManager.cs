@@ -1,27 +1,50 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SceneManager : MonoBehaviour
 {
+    //public GameObject progress;
 
+    void Awake()
+    {
+        if (Application.loadedLevelName.Equals("MissionSelector"))
+        {
+            Debug.Log("Awaken");
+            //progress = GameObject.
+        }
+
+    }
     public void LoadScene(string scene)
     {
         Application.LoadLevel(scene);
     }
 
-    // Use this for initialization
-    void Start()
+
+    public void LoadLevelAsync(string scene)
     {
 
+        //AsyncOperation operation = Application.LoadLevelAdditiveAsync(scene);
+        //var pro = progress.GetComponent<Text>();
+
+        //pro.text = operation.progress.ToString("f0") + "%";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Escape))
+
+        if (Application.isLoadingLevel && Application.loadedLevelName.Equals("MissionSelector"))
+        {
+
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Menu) || Input.GetKeyDown(KeyCode.Backspace))
         {
             Application.Quit();
+
         }
+
+
     }
 
     public void LoadFacebookPage()

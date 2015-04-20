@@ -4,8 +4,6 @@ using System.Collections;
 public class Collect : MonoBehaviour
 {
 
-
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Player"))
@@ -13,5 +11,7 @@ public class Collect : MonoBehaviour
             NotificationCenter.DefNotCenter.PostNotification(this, "OnCollect");
             gameObject.SetActive(false);
         }
+
+
     }
 }
